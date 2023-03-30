@@ -11,8 +11,7 @@ class Category extends Model
     use HasFactory ,SoftDeletes;
     protected $fillable = [
         'name',
-'sluge'
-
+        'sluge'
     ];
 
 public function getARNameAttribute()
