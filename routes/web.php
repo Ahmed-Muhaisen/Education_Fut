@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VedioController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +44,17 @@ Route::get('Category/restore/{id}',[CategoryController::class,'restore'])->name(
 Route::delete('Category/forcedelete/{id}',[CategoryController::class,'forcedelete'])->name('Category.forcedelete');
 Route::resource('Category',CategoryController::class);
 
+
+Route::get('Course/trash',[CourseController::class,'trash'])->name('Course.trash');
+Route::get('Course/restore/{id}',[CourseController::class,'restore'])->name('Course.restore');
+Route::delete('Course/forcedelete/{id}',[CourseController::class,'forcedelete'])->name('Course.forcedelete');
+Route::resource('Course',CourseController::class);
+
+
+Route::get('Video/trash',[VideoController::class,'trash'])->name('Video.trash');
+Route::get('Video/restore/{id}',[VideoController::class,'restore'])->name('Video.restore');
+Route::delete('Video/forcedelete/{id}',[VideoController::class,'forcedelete'])->name('Video.forcedelete');
+Route::resource('Video',VideoController::class);
 });
 
 

@@ -2,8 +2,12 @@
 @section('head_content')
 
 <div class="container card mt-5 py-4">
+<div class="d-flex justify-content-between align-items-center" >
+        <h2>Create Category</h2>
+        <a class="btn btn-outline-info h-25" onclick="window.history.back()" >Return Back</a>
+    </div>
 
-    <h2>Create Category</h2>
+
 <form action="@if($page=='Create')
 {{ route('admin.Category.store') }}
 @else

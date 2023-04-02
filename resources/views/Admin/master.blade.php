@@ -37,7 +37,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-tags"></i>
                     <span>Category</span>
                 </a>
                 <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -46,7 +46,7 @@
                         <a class="collapse-item" href="{{route('admin.Category.index') }}">index</a>
                         <a class="collapse-item" href="{{route('admin.Category.create') }}">Create New Category</a>
 
-                    <a class="collapse-item" href="cards.html">trash </a>
+                    <a class="collapse-item" href="{{ route('admin.Category.trash') }}">trash </a>
                 </div>
 
                 </div>
@@ -57,16 +57,16 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse"
                 aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-fw fa-laptop"></i>
                 <span>Course</span>
             </a>
             <div id="collapseCourse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
 
-                    <a class="collapse-item" href="buttons.html">index</a>
-                    <a class="collapse-item" href="cards.html">Create New Course</a>
+                    <a class="collapse-item" href="{{route('admin.Course.index') }}">index</a>
+                    <a class="collapse-item" href="{{route('admin.Course.create') }}">Create New Course</a>
 
-                <a class="collapse-item" href="cards.html">trash </a>
+                <a class="collapse-item" href="{{ route('admin.Course.trash') }}">trash </a>
             </div>
 
             </div>
@@ -79,16 +79,15 @@
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVideo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
+                        <i class="fas fa-fw fa-video"></i>
                         <span>Video</span>
                     </a>
                     <div id="collapseVideo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="{{route('admin.Video.index') }}">index</a>
+                            <a class="collapse-item" href="{{route('admin.Video.create') }}">Create New Video</a>
 
-                            <a class="collapse-item" href="buttons.html">index</a>
-                            <a class="collapse-item" href="cards.html">Create New Video</a>
-
-                        <a class="collapse-item" href="cards.html">trash </a>
+                        <a class="collapse-item" href="{{ route('admin.Video.trash') }}">trash </a>
                     </div>
 
                     </div>
