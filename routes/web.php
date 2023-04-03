@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VedioController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\CourseController;
+
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\CategoryController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +21,14 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::prefix(LaravelLocalization::setLocale())->group(function(){
 
+
+// });
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+Route::get('/',[WebsiteController::class ,'index'])->name('index');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

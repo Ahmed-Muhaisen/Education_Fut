@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class CourseController extends Controller
 {
 
