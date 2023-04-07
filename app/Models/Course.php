@@ -55,6 +55,32 @@ class Course extends base
     }
 
 
+
+    public function getLExternalContentAttribute()
+    {
+       $name= $this->external_content;
+       if($name==null){
+        return '';
+       }
+       $name_new=json_decode($name,JSON_UNESCAPED_UNICODE);
+
+       return $name_new[app()->CurrentLocale()];
+    }
+
+
+
+    public function getLInternalContentAttribute()
+    {
+       $name= $this->internal_content;
+       if($name==null){
+        return '';
+       }
+       $name_new=json_decode($name,JSON_UNESCAPED_UNICODE);
+
+       return $name_new[app()->CurrentLocale()];
+    }
+
+
     public function Category()
     {
         return $this->belongsTo(Category::class,'category_id');

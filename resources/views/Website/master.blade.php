@@ -6,7 +6,7 @@
 
   <meta name="author" content="themeturn.com">
 
-  <title>Edutim- Education LMS template</title>
+  <title>@yield('titel',env('APP_NAME'))</title>
 
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +44,7 @@ body{
     font-family: 'Cairo', sans-serif;
 }
 
-.header-form i {
+.header-form i,.topbar-search label {
     left: 14px;
     right: auto;
 }
@@ -57,7 +57,7 @@ body{
     <div class="site-navigation main_menu menu-2" id="mainmenu-area">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{ route('index') }}">
                     <img src="{{asset('website/assets/images/logo-dark.png')}}" alt="Edutim" class="img-fluid">
                 </a>
 
@@ -76,25 +76,12 @@ body{
                                 <i class="fa fa-grip-horizontal"></i>{{ __('trans.Categoris') }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="#">
-                                    WordPress
+                                @foreach (App\Models\Category::all() as $item )
+                                <a class="dropdown-item " href="{{ route('Website.Category',$item->sluge) }}">
+                                    {{$item->L_Name}}
                                 </a>
-                                <a class="dropdown-item " href="#">
-                                    Web Design
-                                </a>
+                                @endforeach
 
-                                <a class="dropdown-item " href="#">
-                                    Marketing
-                                </a>
-                                 <a class="dropdown-item " href="#">
-                                    Graphics Design
-                                </a>
-                                <a class="dropdown-item " href="#">
-                                   Financial
-                                </a>
-                                <a class="dropdown-item " href="#">
-                                    Personal Growth
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -105,136 +92,29 @@ body{
                     </form>
 
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{ __('trans.Home') }}  <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="index.html">
-                                    Home 1
-                                </a>
-                                <a class="dropdown-item " href="index-2.html">
-                                    Home 2
-                                </a>
-                                <a class="dropdown-item " href="index-3.html">
-                                    Home 3
-                                </a>
-                                <a class="dropdown-item " href="index-4.html">
-                                    Home 4
-                                </a>
-                                <a class="dropdown-item " href="index-5.html">
-                                    Home 5
-                                </a>
-                                 <a class="dropdown-item " href="index-6.html">
-                                    Home 6
-                                </a>
-                                <a class="dropdown-item " href="index-7.html">
-                                    Home 7
-                                </a>
-                                <a class="dropdown-item " href="index-8.html">
-                                    Home 8 <span>New</span>
-                                </a>
 
-                            </div>
+
+                        <li class="nav-item ">
+                            <a href="{{ route('index') }}" class="nav-link js-scroll-trigger">
+                              {{ __('trans.Home') }}
+                            </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="about.html" class="nav-link js-scroll-trigger">
+                            <a href="{{ route('Website.About') }}" class="nav-link js-scroll-trigger">
                               {{ __('trans.About') }}
                             </a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{ __('trans.Courses') }}  <i class="fa fa-angle-down"></i>
+                        <li class="nav-item ">
+                            <a href="{{ route('Website.Courses') }}" class="nav-link js-scroll-trigger">
+                              {{ __('trans.Courses') }}
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                <a class="dropdown-item " href="course-grid.html">
-                                   Course Style 1
-                               </a>
-                               <a class="dropdown-item " href="course-grid-2.html">
-                                   Course Style 2
-                               </a>
+                        </li>
 
-                               <a class="dropdown-item " href="course-grid-3.html">
-                                   Course Style 3
-                               </a>
-                               <a class="dropdown-item " href="course-grid-4.html">
-                                   Course Style 4
-                               </a>
-                               <a class="dropdown-item " href="course-grid-5.html">
-                                   Course Filter
-                               </a>
-                               <a class="dropdown-item " href="course-grid-6.html">
-                                   Course List
-                               </a>
-                                <a class="dropdown-item " href="course-single.html">
-                                   Course Details Style 1
-                               </a>
-                               <a class="dropdown-item " href="course-single2.html">
-                                   Course Details Style Tab
-                               </a>
-                               <a class="dropdown-item " href="course-single3.html">
-                                   Course Details Style Tab2
-                               </a>
-                               <a class="dropdown-item " href="course-single4.html">
-                                   Course Details Classic
-                               </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               {{ __('trans.Shop') }} <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="shop.html">
-                                    Shop
-                                </a>
-                                <a class="dropdown-item " href="product-list-filter.html">
-                                    Shop List Filter
-                                </a>
-                                <a class="dropdown-item " href="product-single.html">
-                                   Shop Single
-                                </a>
-                                <a class="dropdown-item " href="cart.html">
-                                    Cart
-                                </a>
-                                <a class="dropdown-item " href="checkout.html">
-                                    Checkout
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{ __('trans.Pages') }}  <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                <a class="dropdown-item " href="instructors.html">
-                                    Instructor
-                                </a>
-                                 <a class="dropdown-item " href="login-registration.html">
-                                    Login
-                                </a>
-                                <a class="dropdown-item " href="404.html">
-                                    404
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{ __('trans.Blog') }}  <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
-                                 <a class="dropdown-item " href="blog.html">
-                                    Blog
-                                </a>
-                                <a class="dropdown-item " href="blog-single.html">
-                                    Blog Single
-                                </a>
-                            </div>
-                        </li>
+
 
                         <li class="nav-item ">
-                            <a href="contact.html" class="nav-link">
+                            <a href="{{ route('Website.Contact') }}" class="nav-link">
                               {{ __('trans.Contact') }}
                             </a>
                         </li>
@@ -258,7 +138,7 @@ body{
 
 
 
-                    <a href="#" class="btn btn-main btn-small"><i class="fa fa-sign-in-alt mr-2"></i>{{ __('trans.Login') }}</a>
+                    <a href="{{ route('Website.Login') }}" class="btn btn-main btn-small"><i class="fa fa-sign-in-alt mr-2"></i>{{ __('trans.Login') }}</a>
 
                 </div> <!-- / .navbar-collapse -->
             </div> <!-- / .container -->

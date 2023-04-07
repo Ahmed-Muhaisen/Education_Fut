@@ -56,7 +56,7 @@
             <label for="">
                Time
             </label>
-            <input type="text" name="time"           class="form-control
+            <input type="number" name="time"           class="form-control
                     @error('time')
                     is-invalid
                     @enderror"

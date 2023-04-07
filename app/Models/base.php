@@ -33,7 +33,7 @@ class base extends Model
         return $name_new['en'];
      }
 
-    public function LName()
+    public function getLNameAttribute()
     {
         $name= $this->name;
         if($name==null){

@@ -28,6 +28,18 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 Route::get('/',[WebsiteController::class ,'index'])->name('index');
+Route::prefix('web')->name('Website.')->group(function(){
+    Route::get('Category/{sluge}',[WebsiteController::class ,'Category'])->name('Category');
+    Route::get('About',[WebsiteController::class ,'About'])->name('About');
+    Route::get('Courses',[WebsiteController::class ,'Courses'])->name('Courses');
+    Route::get('Contact',[WebsiteController::class ,'Contact'])->name('Contact');
+    Route::get('Login',[WebsiteController::class ,'Login'])->name('Login');
+});
+
+
+
+
+
 });
 Route::get('/dashboard', function () {
     return view('dashboard');

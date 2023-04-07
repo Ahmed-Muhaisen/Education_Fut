@@ -104,7 +104,7 @@
     }
   });
 
-  //  Course Slider 
+  //  Course Slider
   $('.course-slides').owlCarousel({
     loop: true,
     dots: true,
@@ -159,8 +159,8 @@
         items: 3
       }
     }
-  }); 
-  
+  });
+
   // Counter
 
   $('.counter').counterUp({
@@ -195,8 +195,8 @@
         items: 4
       }
     }
-  }); 
-  
+  });
+
   // overlay search
 
   $('.search_toggle').on('click', function (e) {
@@ -271,7 +271,7 @@
   });
 
 
-  
+
    /*
     * ----------------------------------------------------------------------------------------
     *  SMOTH SCROOL JS
@@ -289,7 +289,7 @@
     /* ----------------------------------------------------------- */
       /*  Fixed header
       /* ----------------------------------------------------------- */
-  
+
       $(window).scroll(function () {
         var window_top = $(window).scrollTop() + 1;
         if (window_top > 50) {
