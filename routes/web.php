@@ -32,6 +32,20 @@ Route::prefix('web')->name('Website.')->group(function(){
     Route::get('Category/{sluge}',[WebsiteController::class ,'Category'])->name('Category');
     Route::get('About',[WebsiteController::class ,'About'])->name('About');
     Route::get('Courses',[WebsiteController::class ,'Courses'])->name('Courses');
+
+    Route::get('My_Courses',[WebsiteController::class ,'My_Courses'])->name('My_Courses');
+
+    Route::get('Course_sengel/{Course:sluge}',[WebsiteController::class ,'Course_sengel'])->name('Course_sengel');
+    Route::get('Buy_Course/{Course:sluge}',[WebsiteController::class ,'Buy_Course'])->middleware('auth')->name('Buy_Course');
+    Route::get('Buy_course_thanks/{id}',[WebsiteController::class ,'Buy_course_thanks'])->middleware('auth')->name('Buy_course_thanks');
+
+    Route::get('Videos_Course/{Course:sluge}',[WebsiteController::class ,'Videos_Course'])->middleware('auth')->name('Videos_Course');
+
+    Route::get('Video_sengel/{Video:id}',[WebsiteController::class ,'Video_sengel'])->name('Video_sengel');
+
+    Route::get('Video_Show/{Video_id}/{Course_id}/{Complete?}',[WebsiteController::class ,'Video_Show'])->name('Video_Show');
+
+    Route::get('Course_Certificate/{Course:sluge}',[WebsiteController::class ,'Course_Certificate'])->middleware('auth')->name('Course_Certificate');
     Route::get('Contact',[WebsiteController::class ,'Contact'])->name('Contact');
     Route::get('Login',[WebsiteController::class ,'Login'])->name('Login');
 });

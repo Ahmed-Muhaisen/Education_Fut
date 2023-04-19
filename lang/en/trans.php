@@ -11,5 +11,6 @@ return [
 "Contact"=>"Contact",
 "Login"=>"Login",
 "language"=>"Language",
-
+"Information_About"=>"Information About",
+"Category"=>"Category",
 ];

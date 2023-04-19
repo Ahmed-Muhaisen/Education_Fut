@@ -65,7 +65,7 @@ class VideoController extends Controller
 
      if($request->file('image')){
         $image=$request->file('image');
-        $name_image=rand().''.date('y-m-d').''.time().''.$image->getClientOriginalName();
+        $name_image=rand().''.date('y-m-d').''.time().''.$image->getClientOriginaL_Name;
         $request->file('image')->move('uploads',$name_image);
      }
 
@@ -133,7 +133,7 @@ class VideoController extends Controller
 
      if($request->file('image')){
         $image=$request->file('image');
-        $name_image=rand().''.date('y-m-d').''.time().''.$image->getClientOriginalName();
+        $name_image=rand().''.date('y-m-d').''.time().''.$image->getClientOriginaL_Name;
         $request->file('image')->move('uploads',$name_image);
         Video::findorfail($id)->update([
             'image'=>$name_image,]);

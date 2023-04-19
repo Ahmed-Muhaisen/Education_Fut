@@ -56,7 +56,7 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->En_Name}}</td>
                             <td>{{ $item->Ar_Name}}</td>
-                            <td>{{ $item->LName()}}</td>
+                            <td>{{ $item->L_Name}}</td>
                             <td>{{$item->Course->count()}}</td>
                             <td>
 

@@ -45,6 +45,8 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('webadmin/js/demo/datatables-demo.js') }}"></script>
+<script>const userId=2;</script>
+
 </body>
 
 </html>

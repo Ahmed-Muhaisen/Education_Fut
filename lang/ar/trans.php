@@ -11,7 +11,8 @@ return [
     "Contact"=>"التواصل",
     "Login"=>"دخول",
     "language"=>"اللغات",
-
+    "Information_About"=>"معلومات عن",
+    "Category"=>"القسم",
 
 
 

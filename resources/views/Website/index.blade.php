@@ -62,6 +62,7 @@
 
         <div class="row">
             @foreach ($Courses as $item)
+            <div class="col-lg-4 col-md-6">
             @include('Website/part_course')
         @endforeach
         </div>
@@ -169,37 +170,7 @@
             <div class="row course-gallery ">
                 @foreach ($Course as $item)
                 <div class="course-item  col-lg-4  cat{{ $item->category->id}}">
-                    <div class="course-block">
-                        <div class="course-img">
-                            <img src="{{$item->image}}" alt="" class="img-fluid">
-
-                        </div>
-
-                        <div class="course-content">
-                            <div class="course-price ">{{$item->price}}</div>
-
-                            <h4><a href="#">{{$item->L_Name}}</a></h4>
-                            <div class="rating">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <span>(5.00)</span>
-                            </div>
-                            <p>{{$item->L_External_Content}}</p>
-
-                            <div class="course-footer d-lg-flex align-items-center justify-content-between">
-                                <div class="course-meta">
-                                    <span class="course-student"><i class="bi bi-group"></i>340</span>
-                                    <span class="course-duration"><i class="bi bi-badge3"></i>82 Lessons</span>
-                                </div>
-
-                                <div class="buy-btn"><a href="#" class="btn btn-main-2 btn-small">Details</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @include('Website/part_course')
                 @endforeach
 
             </div>
@@ -253,24 +224,7 @@
     </div>
 </section>
 
-    <!--course section start-->
-    <section class="section-padding video-section2 clearfix" >
-        <div class="video-block-container"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <span class="subheading">Working Process</span>
-                        <h3>Watch video to know more about us</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <a href="#" class="video-icon"><i class="fa fa-play"></i></a>
-                </div>
-            </div>
-        </div>
-        <!--course-->
-    </section>
+
     <!--course section end-->
 <section class="testimonial section-padding">
     <div class="container">

@@ -1,5 +1,8 @@
 "use strict";
 
+
+
+
 (function ($) {
   "use strict";
 
@@ -13,6 +16,9 @@
     }
   });
 
+  var lang= $('html').attr('lang')=='ar'? true : false ;
+
+console.log(lang);
   //  Tetsimonial 1
   $('.testimonials-slides').owlCarousel({
     loop: true,
@@ -22,6 +28,7 @@
     autoplayHoverPause: true,
     autoplay: true,
     center: true,
+    rtl:lang,
     responsiveClass: true,
     autoplayTimeout: 4000,
     responsive: {
@@ -48,6 +55,7 @@
     loop: true,
     dots: false,
     nav: true,
+    rtl:lang,
     margin: 10,
     autoplayHoverPause: true,
     autoplay: false,
@@ -78,6 +86,7 @@
     loop: true,
     dots: true,
     nav: false,
+    rtl:lang,
     margin: 10,
     autoplayHoverPause: true,
     autoplay: false,
@@ -109,6 +118,7 @@
     loop: true,
     dots: true,
     nav: false,
+    rtl:lang,
     margin: 10,
     autoplayHoverPause: true,
     autoplay: false,
@@ -137,6 +147,7 @@
   $('.course-slides-list').owlCarousel({
     loop: true,
     dots: true,
+    rtl:lang,
     nav: false,
     margin: 10,
     autoplayHoverPause: true,
@@ -172,6 +183,7 @@
   $('.team-slider').owlCarousel({
     loop: true,
     nav: false,
+    rtl:lang,
     dots: true,
     autoplayHoverPause: true,
     autoplay: false,
